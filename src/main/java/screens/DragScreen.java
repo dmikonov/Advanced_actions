@@ -12,8 +12,10 @@ public class DragScreen extends BaseScreen {
     @FindBy(xpath = "//*[@resource-id='com.h6ah4i.android.example.advrecyclerview:id/button'][2]")
     MobileElement selectDraggableBasic;
 
-    @FindBy(xpath = "")
+    @FindBy (xpath = "//*[@content-desc='Swipe']")
     MobileElement selectSwipe;
+    @FindBy(xpath = "//*[@resource-id='com.h6ah4i.android.example.advrecyclerview:id/button'][6]")
+    MobileElement selectDragLayout;
     public DraggableBasicScreen selectDraggableBasic() {
         selectDraggableBasic.click();
         return new DraggableBasicScreen(driver);
@@ -22,5 +24,11 @@ public class DragScreen extends BaseScreen {
         selectSwipe.click();
         return new SwipeScreen(driver);
     }
+
+    public DraggableLayoutBasicScreen selectDragLayout(){
+        selectDragLayout.click();
+        return new DraggableLayoutBasicScreen(driver);
+    }
+
 
 }
